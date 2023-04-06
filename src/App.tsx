@@ -9,12 +9,16 @@ import { far } from '@fortawesome/free-regular-svg-icons'
 import {createRoutesFromElements,createBrowserRouter,createHashRouter,Route,RouterProvider} from 'react-router-dom'
 import { Home } from './Pages/Home'
 import { Movies } from './Pages/Movies'
-
+import { MovieDetails } from './Pages/MovieDetails'
+import { mediaDetailsLoader } from './Pages/MovieDetails'
+const API_KEY:string = '0b338d8560dffa32035a5a08fa0a2dcd'
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<RootLayout/>}>
-      <Route index element={<Home/>}/>
-      <Route path='movies' element={<Movies/>}/>
+      <Route index element={<Home api={API_KEY}/>}/>
+      <Route path='movies' element={<Movies/>}>
+        <Route path=':id' element={<MovieDetails/>} loader={mediaDetailsLoader}/>
+      </Route>
     </Route>
   )
 )

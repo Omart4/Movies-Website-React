@@ -6,6 +6,7 @@
 }
 .search input{
     width: 70%;
+    min-width: 30%;
     background: url(../assets/Search.svg);
     background-repeat: no-repeat;
     background-size: 1.3rem;

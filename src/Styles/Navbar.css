@@ -3,8 +3,8 @@ nav{
     left: 0;
     top: 0;
     background-color: var(--navColor);
-    width: 20%;
-    min-width: 15rem;
+    width: 10%;
+    min-width: 13rem;
     height: 100%;
     border-top-right-radius: var(--radiusValue);
     border-bottom-right-radius: var(--radiusValue);
@@ -33,6 +33,7 @@ nav{
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: left;
     height: 20%;
     gap: 1rem;
     font-size: 1.3rem;
