@@ -1,0 +1,12 @@
+.backdrop{
+
+    width: 100%;
+    width: fit-content;
+    border-radius: var(--radiusValue) ;
+    overflow: hidden;
+    height: 30rem;
+}
+.backdrop img{
+    width: 100%;
+    height: 100%;
+}
