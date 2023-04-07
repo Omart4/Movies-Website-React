@@ -12,7 +12,7 @@ export const Navbar = ():JSX.Element => {
                 <NavLink to='shows'><FontAwesomeIcon icon={["fas","tv"]} /> TV Series</NavLink>
                 <NavLink to='upcoming'><FontAwesomeIcon icon={["fas","calendar"]} /> Upcoming</NavLink>
             </div>
-            <p><FontAwesomeIcon style={{marginRight:'1rem'}} icon={["fas","arrow-right-from-bracket"]} />Logout</p>
+            <p className='logout'><FontAwesomeIcon style={{marginRight:'1rem'}} icon={["fas","arrow-right-from-bracket"]} />Logout</p>
         </nav>
     )
 };

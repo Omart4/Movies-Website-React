@@ -18,9 +18,8 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<RootLayout/>}>
       <Route index element={<Home api={API_KEY}/>}/>
-      <Route path='movies' element={<Movies/>}>
-        <Route path=':id' element={<MovieDetails/>} loader={mediaDetailsLoader}/>
-      </Route>
+      <Route path='movies' element={<Movies/>}/>
+      <Route path='/movies/:id' element={<MovieDetails/>} loader={mediaDetailsLoader}/>
     </Route>
   )
 )

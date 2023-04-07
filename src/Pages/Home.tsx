@@ -2,7 +2,7 @@ import { ApiProps } from 'myTypes';
 import {FC,useEffect,useState} from 'react'
 import '../Styles/Home.css'
 import { MediaCard } from '../Components/MediaCard';
-import { Loading } from '../Components/Loading';
+import { Loading } from '../Components/small components/Loading';
 export const Home:FC<ApiProps> = ({api}):JSX.Element => {
     const [list,setList] = useState([]);
     const [isLoading,setIsLoading] = useState(true)
@@ -22,3 +22,4 @@ export const Home:FC<ApiProps> = ({api}):JSX.Element => {
         </div>
     )
 };
+

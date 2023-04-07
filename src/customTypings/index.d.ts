@@ -46,6 +46,7 @@ declare module 'myTypes'{
         vote_average:number;
         vote_count:number;
         production_companies:companies[];
+        runtime:number;
     }
     interface PopularMediaProp{
         media:PopularMediaType;
