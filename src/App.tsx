@@ -11,7 +11,7 @@ import { Movies } from './Pages/Movies'
 import { MovieDetails } from './Pages/MovieDetails'
 import { mediaDetailsLoader } from './Pages/MovieDetails'
 
-const API_KEY:string = '0b338d8560dffa32035a5a08fa0a2dcd'
+export const API_KEY:string = '0b338d8560dffa32035a5a08fa0a2dcd'
 
 
 const router = createBrowserRouter(

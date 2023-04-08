@@ -4,7 +4,6 @@ import { PopularMediaProp, Movie } from 'myTypes';
 import {toHoursAndMinutes} from '../assets/helpers'
 import '../Styles/MovieDetails.css'
 import { GenreTag } from '../Components/small components/GenreTag';
-import { YoutubeTrailer } from '../Components/YoutubeTrailer';
 const api:string = '0b338d8560dffa32035a5a08fa0a2dcd'
 
 
@@ -20,7 +19,7 @@ export const MovieDetails = ():JSX.Element => {
       setKey(teaserArr[0].key)
       console.log(key)
     })
-  },[])
+  },[id])
   return(
     <div className='movie'>
       <div className='backdrop'>
@@ -47,4 +46,3 @@ export const mediaDetailsLoader = async ({ params }:any) => {
   
   return res.json()
 }
-// `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${api}&language=en-US`

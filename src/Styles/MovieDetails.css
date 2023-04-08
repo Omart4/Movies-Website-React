@@ -7,7 +7,6 @@
     width: fit-content;
     border-radius: var(--radiusValue) ;
     overflow: hidden;
-    height: 30rem;
 }
 .backdrop img{
     width: 100%;

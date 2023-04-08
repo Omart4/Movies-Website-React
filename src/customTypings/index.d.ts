@@ -48,8 +48,21 @@ declare module 'myTypes'{
         production_companies:companies[];
         runtime:number;
     }
+    type MediaSearch = {
+        title:string;
+        name:string;
+        id:number;
+        adult:boolean;
+        backdrop_path:string;
+        poster_path:string;
+        media_type:string;
+        vote_average:number;
+    }
     interface PopularMediaProp{
         media:PopularMediaType;
+    }
+    interface MediaSearchProp{
+        search:MediaSearch;
     }
 }
 module.exports = {

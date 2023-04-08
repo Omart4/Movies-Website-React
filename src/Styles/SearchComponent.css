@@ -1,0 +1,19 @@
+.search-component{
+    padding: 0 2rem;
+    height: 6rem;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    gap: 3rem;
+    padding: 0 2rem;
+    color: var(--fontColor);
+    transition: var(--transitionInfo);
+    margin-top: .3rem;
+}
+.search-component img{
+    max-height: 100%;
+}
+.search-component:hover{
+    background-color: var(--blueTheme);
+}

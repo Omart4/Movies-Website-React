@@ -4,9 +4,13 @@
     justify-content: space-evenly;
     margin-top: 2rem;
 }
-.search input{
+.search-tools{
     width: 70%;
     min-width: 30%;
+    position: relative;
+}
+.search input{
+    width: 100%;
     background: url(../assets/Search.svg);
     background-repeat: no-repeat;
     background-size: 1.3rem;
@@ -23,6 +27,18 @@
 }
 .search input:focus{
     border: 2px solid var(--blueTheme);
+}
+.search-results{
+    width: 100%;
+    height: fit-content;
+    transition: var(--transitionInfo);
+    position: absolute;
+    overflow: hidden;
+    border-radius: var(--radiusValue);
+    background-color: var(--navColor);
+    z-index: 4;
+    top: 4rem;
+    left: 1rem;
 }
 .user-info{
     display: flex;
