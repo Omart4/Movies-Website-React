@@ -2,6 +2,8 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {NavLink,Link} from 'react-router-dom'
 import Logo from '../assets/LogoText.png'
 import '../Styles/Navbar.css'
+
+
 export const Navbar = ():JSX.Element => {
     return(
         <nav>

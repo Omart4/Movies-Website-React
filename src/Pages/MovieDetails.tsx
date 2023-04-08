@@ -11,6 +11,8 @@ export const MovieDetails = ():JSX.Element => {
   const { id } = useParams()
   const [key,setKey] = useState()
   const movie = useLoaderData() as Movie
+
+
   useEffect(()=>{
     fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${api}&language=en-US`)
     .then(res=>res.json())
@@ -20,6 +22,8 @@ export const MovieDetails = ():JSX.Element => {
       console.log(key)
     })
   },[id])
+
+
   return(
     <div className='movie'>
       <div className='backdrop'>
@@ -41,8 +45,7 @@ export const mediaDetailsLoader = async ({ params }:any) => {
   const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${api}&language=en-US`)
   
   if (!res.ok) {
-    throw Error('Could not find that career.')
+    throw Error('Could not find that movie.')
   }
-  
   return res.json()
 }
