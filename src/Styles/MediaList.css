@@ -1,0 +1,35 @@
+.media-list{
+    margin-top: 0.7rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 15rem;
+    overflow-x:hidden;
+    gap: 1rem;
+    scroll-behavior: smooth;
+}
+h2{
+    margin: 0;
+}
+.media-list-nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.media-list-buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+}
+.media-list-buttons span{
+    background-color: var(--navColor);
+    padding: 0.3rem 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all linear 0.1s;
+}
+.media-list-buttons span:hover{
+    color: var(--blueTheme);
+}

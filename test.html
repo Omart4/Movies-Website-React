@@ -1,0 +1,41 @@
+<style>
+    #list{
+        display: flex;
+        max-width: 90%;
+        overflow-y: scroll;
+        gap: 10px;
+        transition: all linear 0.1s;
+        scroll-behavior: smooth;
+    }
+    #list li{
+        list-style: none;
+        border: 1px solid black;
+    }
+</style>
+
+<h1>Test</h1>
+<button id="left">left</button>
+<button id="right">right</button>
+<ul id="list">
+
+</ul>
+
+<script>
+    const list = document.getElementById('list')
+    const left = document.getElementById('left')
+    const right = document.getElementById('right')
+    let text = '';
+    for(let i = 0;i<=100;i++){
+        text += `<li>Item:${i}</li>`
+    }
+    list.innerHTML = text
+    right.addEventListener('click',()=>{
+        list.scrollBy(100,0)
+        console.log('right')
+    })
+    left.addEventListener('click',()=>{
+        list.scrollBy(-100,0)
+        console.log('left')
+    })
+
+</script>

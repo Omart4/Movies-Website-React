@@ -4,12 +4,15 @@ import { PopularMediaProp, Movie } from 'myTypes';
 import {toHoursAndMinutes} from '../assets/helpers'
 import '../Styles/MovieDetails.css'
 import { GenreTag } from '../Components/small components/GenreTag';
-const api:string = '0b338d8560dffa32035a5a08fa0a2dcd'
+import { API_KEY as api } from '../App';
+
+
 
 
 export const MovieDetails = ():JSX.Element => {
   const { id } = useParams()
   const [key,setKey] = useState()
+  const [session,setSession] = useState("")
   const movie = useLoaderData() as Movie
 
 
@@ -22,7 +25,6 @@ export const MovieDetails = ():JSX.Element => {
       console.log(key)
     })
   },[id])
-
 
   return(
     <div className='movie'>

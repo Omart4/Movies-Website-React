@@ -17,7 +17,7 @@ export const API_KEY:string = '0b338d8560dffa32035a5a08fa0a2dcd'
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<RootLayout/>}>
-      <Route index element={<Home api={API_KEY}/>}/>
+      <Route index element={<Home/>}/>
       <Route path='movies' element={<Movies/>}/>
       <Route path='/movies/:id' element={<MovieDetails/>} loader={mediaDetailsLoader}/>
     </Route>
