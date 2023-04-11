@@ -1,18 +1,38 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import '../Styles/MediaList.css'
 import { Loading } from "./small components/Loading";
 import { MediaCard } from "./MediaCard";
 import { PopularMediaProp } from "myTypes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import axios from "../API/axios";
 interface MediaListProp{
-    isLoading:boolean;
-    arr:PopularMediaProp[];
     heading:string;
+    link:string;
+    iden:number;
+    gen:number;
 }
 
 
-const MediaList = ({isLoading,arr,heading}:MediaListProp) => {
-    const lista = document.getElementById('lista')
+const MediaList = ({heading,link,iden,gen}:MediaListProp) => {
+    const lista = document.getElementById(`lista${iden}`)
+    const [items,setItems] = useState([])
+    const [isLoading,setIsLoading] = useState(true)
+
+    useEffect(()=>{
+        getMedia(link)
+    },[])
+
+    const getMedia = async (url:string) => {
+        try{
+            const response = await axios.get(url)
+            let maxTrending = response.data.results
+            setItems(maxTrending)
+            setIsLoading(false)
+            console.log(maxTrending)
+        }catch(err){
+            console.log(err)
+        }
+    }
 
     return (
      <section>
@@ -27,9 +47,12 @@ const MediaList = ({isLoading,arr,heading}:MediaListProp) => {
                  </span>
              </div>
          </div>
-         <div className='media-list' id='lista'>
+         <div className='media-list' id={`lista${iden}`}>
              {isLoading && <Loading/>}
-             {!isLoading && arr.map(media=><MediaCard media={media}/>)}
+             {
+                !isLoading && 
+                gen === 0? items.map(media=><MediaCard media={media}/>):items.filter((i:{genre_ids:number[]})=> i.genre_ids.includes(gen)).map(media=><MediaCard media={media}/>)
+            }
          </div>
      </section>
     )

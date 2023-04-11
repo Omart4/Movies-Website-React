@@ -8,27 +8,17 @@ import axios from '../API/axios';
 import { API_KEY as api } from '../App';
 export const Home = ():JSX.Element => {
     const [trending,setTrending] = useState([]);
-    const [isLoading,setIsLoading] = useState(true)
-
-
     useEffect(()=>{
-        getTrending()
+        
     },[])
-    const getTrending = async () => {
-        try{
-            const TRENDING_URL = `trending/all/week?api_key=0b338d8560dffa32035a5a08fa0a2dcd`
-            const response = await axios.get(TRENDING_URL)
-            let maxTrending = response.data.results.slice(0,20)
-            setTrending(maxTrending)
-            setIsLoading(false)
-        }catch(err){
-            console.log(err)
-        }
-    }
+
     
     return(
         <div className="home">
-            <MediaList isLoading={isLoading} arr={trending} heading='Trending'/>
+            <MediaList gen={0} iden={0} heading='Trending' link={`trending/all/week?api_key=${api}`}/>
+            <MediaList gen={28} iden={1} heading='Action' link={`trending/all/week?api_key=${api}`}/>
+            <MediaList gen={53} iden={2} heading='Thriller' link={`trending/all/week?api_key=${api}`}/>
+            <MediaList gen={16} iden={3} heading='Animation' link={`trending/all/week?api_key=${api}`}/>
         </div>
     )
 };
