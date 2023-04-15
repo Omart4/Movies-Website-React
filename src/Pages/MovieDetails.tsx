@@ -5,7 +5,7 @@ import {toHoursAndMinutes} from '../assets/helpers'
 import '../Styles/MovieDetails.css'
 import { GenreTag } from '../Components/small components/GenreTag';
 import { API_KEY as api } from '../App';
-
+import MediaList from '../Components/MediaList';
 
 
 
@@ -17,13 +17,14 @@ export const MovieDetails = ():JSX.Element => {
 
 
   useEffect(()=>{
-    fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${api}&language=en-US`)
+    fetch(`https://api.themoviedb.org/3/movie/${movie.id}/videos?api_key=${api}&language=en-US`)
     .then(res=>res.json())
     .then(data=>{
       let teaserArr:any[] = data.results.filter((d: { type: any; }) => d.type === "Teaser")
       setKey(teaserArr[0].key)
       console.log(key)
     })
+    console.log(movie.id)
   },[id])
 
   return(
@@ -39,6 +40,7 @@ export const MovieDetails = ():JSX.Element => {
         <p className='overview'>{movie.overview}</p>
         {key !== undefined? <iframe src={`https://www.youtube.com/embed/${key}?autoplay=1&mute=1`}></iframe>:"No Trailer😞"}
       </div>
+      <MediaList gen={0} iden={0} heading={`Similar movies to ${movie.title}`} link={`https://api.themoviedb.org/3/movie/${movie.id}/similar?api_key=${api}&language=en-US&page=1`} />
     </div>
   )
 };

@@ -10,6 +10,7 @@ import { Home } from './Pages/Home'
 import { Movies } from './Pages/Movies'
 import { MovieDetails } from './Pages/MovieDetails'
 import { mediaDetailsLoader } from './Pages/MovieDetails'
+import Shows from './Pages/Shows'
 
 export const API_KEY:string = '0b338d8560dffa32035a5a08fa0a2dcd'
 
@@ -19,6 +20,7 @@ const router = createBrowserRouter(
     <Route path='/' element={<RootLayout/>}>
       <Route index element={<Home/>}/>
       <Route path='movies' element={<Movies/>}/>
+      <Route path='shows' element={<Shows/>}/>
       <Route path='/movies/:id' element={<MovieDetails/>} loader={mediaDetailsLoader}/>
     </Route>
   )

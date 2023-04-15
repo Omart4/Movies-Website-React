@@ -1,4 +1,8 @@
 <style>
+    *{
+        font-family: monospace;
+        scroll-behavior: smooth;
+    }
     #list{
         display: flex;
         max-width: 90%;
@@ -11,31 +15,57 @@
         list-style: none;
         border: 1px solid black;
     }
+    #zengo:focus{
+        background-color: black;
+        color: white;
+    }
+    #totop{
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+    }
 </style>
 
 <h1>Test</h1>
 <button id="left">left</button>
 <button id="right">right</button>
+<button id="totop">top</button>
 <ul id="list">
 
 </ul>
+<ul id="lista">
+
+</ul>
+<input type="text" id="zengo">
+<p id="output"></p>
 
 <script>
-    const list = document.getElementById('list')
-    const left = document.getElementById('left')
-    const right = document.getElementById('right')
+    const list = document.getElementById('list');
+    const lista = document.getElementById('lista');
+    const zengo = document.getElementById('zengo');
+    const left = document.getElementById('left');
+    const right = document.getElementById('right');
+    const totop = document.getElementById('totop');
+    const output = document.getElementById('output');
     let text = '';
     for(let i = 0;i<=100;i++){
         text += `<li>Item:${i}</li>`
     }
     list.innerHTML = text
+    lista.innerHTML = text
     right.addEventListener('click',()=>{
-        list.scrollBy(100,0)
+        list.scrollBy(400,0)
         console.log('right')
     })
     left.addEventListener('click',()=>{
-        list.scrollBy(-100,0)
+        list.scrollBy(-400,0)
         console.log('left')
     })
-
+    totop.addEventListener('click',()=>{
+        window.scrollTo(0,0)
+        fetcher()
+    })
+    zengo.addEventListener('keyup',()=>{
+        output.innerText = zengo.value;
+    })
 </script>
