@@ -11,21 +11,12 @@ import MediaList from '../Components/MediaList';
 
 export const MovieDetails = ():JSX.Element => {
   const { id } = useParams()
-  const [key,setKey] = useState()
-  const [session,setSession] = useState("")
   const movie = useLoaderData() as Movie
 
 
   useEffect(()=>{
-    fetch(`https://api.themoviedb.org/3/movie/${movie.id}/videos?api_key=${api}&language=en-US`)
-    .then(res=>res.json())
-    .then(data=>{
-      let teaserArr:any[] = data.results.filter((d: { type: any; }) => d.type === "Teaser")
-      setKey(teaserArr[0].key)
-      console.log(key)
-    })
-    console.log(movie.id)
-  },[id])
+    console.log(movie)
+  },[])
 
   return(
     <div className='movie'>
@@ -38,7 +29,6 @@ export const MovieDetails = ():JSX.Element => {
       </h2>
       <div className='movie-details'>
         <p className='overview'>{movie.overview}</p>
-        {key !== undefined? <iframe src={`https://www.youtube.com/embed/${key}?autoplay=1&mute=1`}></iframe>:"No Trailer😞"}
       </div>
       <MediaList gen={0} iden={0} heading={`Similar movies to ${movie.title}`} link={`https://api.themoviedb.org/3/movie/${movie.id}/similar?api_key=${api}&language=en-US&page=1`} />
     </div>
