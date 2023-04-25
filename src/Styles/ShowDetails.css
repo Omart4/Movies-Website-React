@@ -31,3 +31,9 @@ h2{
     text-align: left;
     width: 70%;
 }
+.seasons{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}

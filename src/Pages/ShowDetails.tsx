@@ -1,17 +1,21 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { API_KEY as api } from "../App";
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import { Show } from "myTypes";
 import { toHoursAndMinutes } from "../assets/helpers";
 import { GenreTag } from "../Components/small components/GenreTag";
 import '../Styles/ShowDetails.css'
 import MediaList from "../Components/MediaList";
+import { season } from "myTypes";
+import axios from "../API/axios";
+import SeasonCard from "../Components/SeasonCard";
 
 const ShowDetails = () => {
-    useEffect(()=>{
-        console.log(show)
-    },[])
     const {id} = useParams()
+    const [seasons,setSeasons] = useState<season[]>([])
+    useEffect(()=>{
+        
+    },[])
     const show = useLoaderData() as Show
     return (
         <div className="show">
@@ -24,7 +28,12 @@ const ShowDetails = () => {
             </h2>
             <div className='movie-details'>
                 <p className='overview'>{show.overview}</p>
+            </div><br/>
+            <h2>Seasons ({show.seasons.length})</h2><br/>
+            <div className="seasons">
+                {show.seasons.map(s=>(<SeasonCard showId={show.id} season={s}/>))}
             </div>
+            <br/>
             <MediaList gen={0} iden={0} heading={`Similar shows to ${show.name}`} link={`https://api.themoviedb.org/3/tv/${show.id}/similar?api_key=${api}&language=en-US&page=1`} />
         </div>
     )

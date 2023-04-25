@@ -98,6 +98,10 @@ declare module 'myTypes'{
     interface MediaSearchProp{
         search:MediaSearch;
     }
+    interface SeasonProp{
+        season:season;
+        showId:number;
+    }
 }
 module.exports = {
    

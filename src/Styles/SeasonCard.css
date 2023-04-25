@@ -1,0 +1,27 @@
+.season-card{
+    width: 9rem;
+    height: 14rem;
+    overflow: hidden;
+    border-radius: var(--radiusValue);
+    transition: var(--transitionInfo);
+    position: relative;
+}
+.season-card img{
+    height: 100%;
+}
+.season-details{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+    top: 0;
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.55);
+}
+.season-card:hover > .season-details{
+    display: flex;
+}
