@@ -102,6 +102,7 @@ declare module 'myTypes'{
         season:season;
         showId:number;
     }
+
 }
 module.exports = {
    

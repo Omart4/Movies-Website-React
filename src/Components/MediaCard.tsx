@@ -1,4 +1,4 @@
-import { PopularMediaProp, PopularMediaType } from 'myTypes';
+import { PopularMediaProp, PopularMediaType, SeasonProp } from 'myTypes';
 import {Link} from 'react-router-dom'
 import '../Styles/MediaCard.css'
 import { FC } from 'react';

@@ -14,6 +14,7 @@ import { showDetailsLoader } from './Pages/ShowDetails'
 import Shows from './Pages/Shows'
 import ShowDetails from './Pages/ShowDetails'
 import ShowSeason from './Pages/ShowSeason'
+import Discover from './Pages/Discover'
 
 export const API_KEY:string = '0b338d8560dffa32035a5a08fa0a2dcd'
 
@@ -27,6 +28,7 @@ const router = createBrowserRouter(
       <Route path='shows' element={<Shows/>}/>
       <Route path='/shows/:id' element={<ShowDetails/>} loader={showDetailsLoader}/>
       <Route path='/shows/:id/season' element={<ShowSeason/>}/>
+      <Route path='discover' element={<Discover/>}/>
     </Route>
   )
 )
