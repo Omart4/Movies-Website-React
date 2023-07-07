@@ -19,7 +19,7 @@ import Discover from './Pages/Discover'
 export const API_KEY:string = '0b338d8560dffa32035a5a08fa0a2dcd'
 
 
-const router = createBrowserRouter(
+const router = createHashRouter(
   createRoutesFromElements(
     <Route path='/' element={<RootLayout/>}>
       <Route index element={<Home/>}/>
