@@ -3,7 +3,7 @@
   "private": false,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "http://Omart4.github.io/",
+  "homepage": "https://Omart4.github.io/Movies-Website-React",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
