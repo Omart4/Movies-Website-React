@@ -7,7 +7,7 @@ import '../Styles/Navbar.css'
 export const Navbar = ():JSX.Element => {
     return(
         <nav>
-            <Link className='logolink' to='/'><img src={Logo} alt="Logo" /></Link>
+            <Link className='logolink' to='/'><img src="https://omart4.github.io/Movies-Website-React/assets/LogoText-c3d1f027.png" alt="Logo" /></Link>
             <div className='links'>
                 <NavLink to='/'><FontAwesomeIcon icon={["fas","house"]}/> Home</NavLink>
                 <NavLink to='movies'><FontAwesomeIcon icon={["fas","video"]} /> Movies</NavLink>
