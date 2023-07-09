@@ -5,6 +5,7 @@ import '../Styles/Navbar.css'
 
 
 export const Navbar = ():JSX.Element => {
+    //test
     return(
         <nav>
             <Link className='logolink' to='/'><img src={Logo} alt="Logo" /></Link>
